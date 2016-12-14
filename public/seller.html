@@ -1,5 +1,5 @@
-<!-- index.html -->
 
+<!DOCTYPE html>
 
 <!-- ASSIGN OUR ANGULAR MODULE -->
 <html ng-app="hackathonCars">
@@ -16,7 +16,6 @@
     <style>
         html                    { overflow-y:scroll; }
         body                    { padding-top:50px; }
-        #todo-list              { margin-bottom:30px; }
     </style>
 
     <!-- SPELLS -->
@@ -25,18 +24,17 @@
     <script src="core.js"></script>
 
 </head>
-<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+<!-- SET THE CONTROLLER -->
 <body ng-controller="mainController">
     <div class="container">
 
-        <!-- HEADER AND TODO COUNT -->
         <div class="jumbotron text-center">
             <h5>Add a car to sell. Number of cars available for sale : <span class="label label-info">{{ cars.length }}</span></h5>
         </div>
 
         <!-- FORM TO ADD A CAR-->
         <div id="cars-form" class="row">
-            <div class="col-sm-8 col-sm-offset-2 ">
+            <div >
                 <form>
                     <div ng-controller="carController">
                         <div class="block">
@@ -57,27 +55,28 @@
 
                         <div class="block">
                             <label>Year</label>
-                            <input type="text" ng-required=true ng-model="formData.Year" placeholder="2015" size="4"/>
+                            <input type="number" min="1960"  ng-required=true ng-model="formData.Year" placeholder="2015" size="4" style="width:8ch"/>
                         </div>
 
                         <div class="block">
                             <label>Mileage</label>
-                            <input type="text" ng-required=true  ng-model="formData.Mileage" placeholder="50000" size="9"/>
+                            <input type="number"  min="0" ng-required=true  ng-model="formData.Mileage" placeholder="50000" style="width:8ch"/>
                         </div>
+
 
                         <div class="block">
                             <label>Price</label>
-                            <input type="number" align="right" ng-required=true  ng-model="formData.Price" placeholder="10000"/>
+                            <input type="number" min = "0"  align="right" ng-required=true  ng-model="formData.Price" placeholder="10000" style="width:10ch"/>
                         </div>
 
                         <div class="block">
                             <label>Zip Code</label>
-                            <input type="text" ng-required=true ng-model="formData.Zipcode" placeholder="95054" size="5"/>
+                            <input type="number" min="10000" ng-required=true ng-model="formData.Zipcode" placeholder="95054" style="width:8ch"/>
                         </div>
 
                         <div class="block">
                             <label>Email</label>
-                            <input type="email" ng-required=true ng-model="formData.Email" placeholder="abc@gmail.com" size="50"/>
+                            <input type="email" ng-required=true ng-model="formData.Email" placeholder="abc@gmail.com" style="width:30ch"/>
                         </div>
 
                         <div class="block">
@@ -87,7 +86,7 @@
 
                         <div class="block">
                             <label>Notes</label>
-                            <textarea title="Notes" rows=5 cols=50 ng-model="formData.Notes" placeholder="Describe the vehicle"></textarea>
+                            <textarea title="Notes" style="width:40ch;height:20ch" rows=5 cols=50 ng-model="formData.Notes" placeholder="Describe the vehicle"></textarea>
                         </div>
 
 

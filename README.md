@@ -4,7 +4,9 @@
 npm install
 to download the node.js dependencies
 
-2) Run :
+2) Install mongodb and start it.
+
+3) Run :
 node start
 
 to run the application.

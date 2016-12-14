@@ -70,6 +70,8 @@ function mainController($scope, $http) {
     $scope.createCar = function () {
         $http.post('/api/cars', $scope.formData)
             .success(function (data) {
+                alert("Your car has been posted for sale. Buyers will contact you directly");
+                window.location = '/index.html';
                 $scope.formData = {}; // clear the form so our user is ready to enter another
                 $scope.cars = data;
                 console.log(data);
